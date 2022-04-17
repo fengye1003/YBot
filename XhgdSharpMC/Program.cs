@@ -167,6 +167,9 @@ namespace XhgdSharpMC
             }
             else
             {
+                Log.SaveLog(rconip);
+                Log.SaveLog(rconPort);
+                Log.SaveLog(rconPasswd);
                 Log.SaveLog("Invaild connection.");
             }
         }

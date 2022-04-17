@@ -64,7 +64,7 @@ namespace XhgdSharpMC
             }
             else
             {
-                File.WriteAllText("./YbotConfig/MiningArea/diamondMost.txt", "50");
+                File.WriteAllText("./YbotConfig/MiningArea/diamondMost.txt", "100");
                 diamondMost = Convert.ToInt32(File.ReadAllText("./YbotConfig/MiningArea/diamondMost.txt"));
             }
             if (File.Exists("./YbotConfig/MiningArea/diamondLeast.txt"))
@@ -73,7 +73,7 @@ namespace XhgdSharpMC
             }
             else
             {
-                File.WriteAllText("./YbotConfig/MiningArea/diamondLeast.txt", "100");
+                File.WriteAllText("./YbotConfig/MiningArea/diamondLeast.txt", "50");
                 diamondLeast = Convert.ToInt32(File.ReadAllText("./YbotConfig/MiningArea/diamondLeast.txt"));
             }
             if (File.Exists("./YbotConfig/MiningArea/coalLeast.txt"))
@@ -128,7 +128,7 @@ namespace XhgdSharpMC
             else
             {
                 File.WriteAllText("./YbotConfig/MiningArea/goldMost.txt", "300");
-                goldMost = Convert.ToInt32(File.ReadAllText("./YbotConfig/MiningArea/boneMost.txt"));
+                goldMost = Convert.ToInt32(File.ReadAllText("./YbotConfig/MiningArea/goldMost.txt"));
             }
             if (File.Exists("./YbotConfig/MiningArea/boneMost.txt"))
             {
@@ -197,13 +197,21 @@ namespace XhgdSharpMC
             Block = "stone";
             Random random = new Random();
             redstone = random.Next(redstoneLeast, redstoneMost);
+            Log.SaveLog("Finished.");
             iron = random.Next(ironLeast, ironMost);
+            Log.SaveLog("Finished.");
             diamond = random.Next(diamondLeast, diamondMost);
+            Log.SaveLog("Finished.");
             coal = random.Next(coalLeast, coalMost);
+            Log.SaveLog("Finished.");
             lapis = random.Next(lapisLeast, lapisMost);
+            Log.SaveLog("Finished.");
             gold = random.Next(goldLeast, goldMost);
+            Log.SaveLog("Finished.");
             bone = random.Next(boneLeast, boneMost);
+            Log.SaveLog("Finished.");
             lava = random.Next(lavaLeast, lavaMost);
+            Log.SaveLog("Finished.");
             water = random.Next(waterLeast, waterMost);
             int WaitTime;
             if (File.Exists("./YbotConfig/MiningArea/WaitTime.txt"))
